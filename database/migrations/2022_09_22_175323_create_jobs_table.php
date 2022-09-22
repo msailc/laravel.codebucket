@@ -14,9 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('jobs', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('description');
+            $table->string('user_id');
+            $table->string('team_id');
+            $table->string('stack_id');
+            $table->string('title');
+            $table->text('description');
             $table->string('workload');
             $table->timestamps();
         });
