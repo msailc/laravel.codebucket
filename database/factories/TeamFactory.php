@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,9 +17,8 @@ class TeamFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::all()->random()->id,
             'name' => $this->faker->name,
-            'description' => $this->faker->text(30),
+            'description' => $this->faker->text,
             'logo' => $this->faker->imageUrl,
         ];
     }

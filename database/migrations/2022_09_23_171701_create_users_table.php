@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('job_user', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('job_id');
-            $table->string('user_id');
+            $table->string('name');
             $table->timestamps();
+
+            $table->bigInteger('team_id')->unsigned()->nullable();
+
+            $table->foreign('team_id')->references('id')->on('teams')
+                ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('job_user');
+        Schema::dropIfExists('users');
     }
 };
