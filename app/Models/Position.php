@@ -13,4 +13,9 @@ class Position extends Model
     {
         return $this->belongsTo(Team::class);
     }
+
+    public function skills()
+    {
+        return $this->belongsToMany(Skill::class);
+    }
 }

@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             TeamSeeder::class,
             UserSeeder::class,
             PositionSeeder::class,
+            SkillSeeder::class,
         ]);
     }
 }
