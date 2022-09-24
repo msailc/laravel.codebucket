@@ -28,3 +28,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('auth/social', 'App\Http\Controllers\Auth\LoginController@show')->name('social.login');
 Route::get('oauth/{driver}', 'App\Http\Controllers\Auth\LoginController@redirectToProvider')->name('social.oauth');
 Route::get('oauth/{driver}/callback', 'App\Http\Controllers\Auth\LoginController@handleProviderCallback')->name('social.callback');
+#create logout route
+Route::get('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
