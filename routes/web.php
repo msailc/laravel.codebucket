@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/prices', [App\Http\Controllers\CryptoPriceController::class, 'index'])->name('crypto_prices.index');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
