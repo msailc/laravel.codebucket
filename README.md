@@ -11,7 +11,7 @@ docker-compose exec laravel.test sh
 
 ### Run scheduler after exec
 
-php artisan schedule:run
+php artisan schedule:work
 
 
 
